@@ -31,7 +31,7 @@ export function app(): express.Express {
   // All regular routes use the Angular engine
   server.get('*', (req, res, next) => {
 
-    console.log('server call')
+    console.log('server calls')
 
     const { protocol, originalUrl, baseUrl, headers } = req;
 
