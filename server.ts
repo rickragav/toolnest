@@ -5,6 +5,8 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
 
+//https://docs.cpanel.net/knowledge-base/web-services/how-to-install-a-node.js-application/
+
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
@@ -24,8 +26,13 @@ export function app(): express.Express {
     maxAge: '1y'
   }));
 
+
+
   // All regular routes use the Angular engine
   server.get('*', (req, res, next) => {
+
+    console.log('server call')
+
     const { protocol, originalUrl, baseUrl, headers } = req;
 
     commonEngine
