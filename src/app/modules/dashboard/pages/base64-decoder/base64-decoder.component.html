@@ -1,0 +1,76 @@
+<div class="flex bg-base-300 font-poppins">
+  <div class="flex w-full flex-col space-x-4 md:flex-row">
+    <!-- Left Image Container -->
+    <div class="my-6 hidden max-h-screen w-1/4 overflow-hidden md:block">
+      <img
+        class="w-full border border-gray-300"
+        src="assets/images/googleads1.jpg"
+        alt="Your Image Alt Text"
+      />
+    </div>
+
+    <!-- Center Content Container -->
+    <div class="w-full mb-8 pr-5 font-poppins">
+      <button (click)="onclickSwitchToEncoder()" class="my-4 btn btn-accent block md:hidden">
+        Switch to encode
+      </button>
+
+      <!-- Header -->
+      <div
+        class="mx-auto my-2 flex flex-col items-center border bg-base-100 px-8 py-4 font-poppins md:flex-row md:justify-between"
+      >
+        <div class="flex flex-col space-y-2">
+          <p class="text-xl font-semibold md:text-3xl">Base64 Decode</p>
+          <p class="hidden truncate text-xs md:block md:text-xs">
+            Effortlessly convert Base64 to text with our user-friendly online
+            tool—paste your Base64 text,<br />
+            copy your decoded text with ease!
+          </p>
+        </div>
+
+        <button (click)="onclickSwitchToEncoder()" class="btn btn-accent hidden md:block">
+          Switch to encode
+        </button>
+      </div>
+
+      <!-- Body -->
+      <div class="mx-auto my-8">
+        <p class="my-4 text-xl">Base64</p>
+        <textarea
+          id="message"
+          [(ngModel)]="base64text"
+          rows="10"
+          class="h-full w-full border bg-base-100 p-2 focus:outline-none focus:ring-0"
+          placeholder="Enter base64.."
+        ></textarea>
+
+        <button (click)="decodeBase64()" class="btn btn-wide btn-accent float-right my-4">
+          Decode
+        </button>
+      </div>
+
+      <br />
+
+      <!-- Decoded Text -->
+      <div class="mx-auto my-4">
+        <p class="my-4 text-xl ">Decoded Text</p>
+        <textarea
+          [(ngModel)]="base64DecodedText"
+          id="message"
+          rows="10"
+          placeholder="Decoded Text.."
+          class="h-full w-full border bg-base-100 p-2 opacity-80 focus:outline-none focus:ring-0"
+        ></textarea>
+      </div>
+    </div>
+
+    <!-- Right Image Container -->
+    <div class="my-6 hidden max-h-screen w-1/4 overflow-hidden md:block">
+      <img
+        class="w-full border border-gray-300"
+        src="assets/images/googleads2.jpg"
+        alt="Your Image Alt Text"
+      />
+    </div>
+  </div>
+</div>

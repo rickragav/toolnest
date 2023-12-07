@@ -31,20 +31,22 @@ export function app(): express.Express {
   // All regular routes use the Angular engine
   server.get('*', (req, res, next) => {
 
-    console.log('server calls')
+    console.log('server calls' + browserDistFolder)
 
     const { protocol, originalUrl, baseUrl, headers } = req;
 
     commonEngine
       .render({
         bootstrap,
-        documentFilePath: indexHtml,
+       documentFilePath: indexHtml,
         url: `${protocol}://${headers.host}${originalUrl}`,
         publicPath: browserDistFolder,
         providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
       })
       .then((html) => res.send(html))
       .catch((err) => next(err));
+
+    
   });
 
   return server;
