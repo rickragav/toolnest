@@ -1,5 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { GithubCallbackComponent } from './utils/GithubCallbackComponent';
 
 export const routes: Routes = [
   // {path:"",component:AppComponent,pathMatch:'full'},
@@ -13,6 +14,8 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./modules/layout/layout.module').then((m) => m.LayoutModule),
   },
+  { path: 'github-callback', component: GithubCallbackComponent },
+
   //   {
   //     path: 'auth',
   //     loadChildren: () => import('./modules/auth/auth.module').then((m) => m.AuthModule),

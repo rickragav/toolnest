@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { UtilsService } from '../../../../utils/UtilsService';
-
+declare var Terser: any;
+// @ts-ignore
+import { minify } from 'html-minifier-terser';
 
 @Component({
   selector: 'app-base64-decoder',

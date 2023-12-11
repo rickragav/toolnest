@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app.routes';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { DashboardRoutingModule } from './modules/dashboard/dashboard-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  imports: [BrowserModule, AppRoutingModule, CommonModule,DashboardRoutingModule, RouterOutlet],
+  imports: [AppRoutingModule,DashboardRoutingModule, RouterOutlet,BrowserAnimationsModule],
   
 })
 export class AppModule {}

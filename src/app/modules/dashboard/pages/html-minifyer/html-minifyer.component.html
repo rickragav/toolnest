@@ -1,0 +1,53 @@
+<div
+  class="flex h-screen bg-gray-900 font-poppins text-white items-center justify-center"
+>
+  <div class="flex flex-col h-screen w-full">
+    <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-8 p-8 rounded-md">
+      <div class="bg-gray-800 p-8 rounded-md">
+        <h1 class="text-3xl font-bold mb-6 text-center text-teal-400">
+          Html Minifier
+        </h1>
+
+        <div class="mb-6">
+          <label for="base64Input" class="block text-gray-400 mb-2">
+            Enter Text:
+          </label>
+          <textarea
+            [(ngModel)]="htmltext"
+            class="w-full p-3 border rounded-md focus:outline-none focus:ring focus:border-blue-300 transition-all duration-300 bg-gray-700 text-white"
+            placeholder="Paste your text here..."
+          ></textarea>
+        </div>
+
+        <button
+          (click)="minifyHTML()"
+          class="w-full bg-teal-400 text-white px-4 py-2 rounded-md transition-colors duration-300 hover:bg-teal-600 focus:outline-none focus:ring focus:border-blue-300"
+        >
+          Minify
+        </button>
+
+        <!-- Google Ads Container -->
+        <div class="google-ads-container">
+          <ins
+            class="adsbygoogle"
+            style="display: block"
+            data-ad-client="YOUR_AD_CLIENT_ID"
+            data-ad-slot="YOUR_SLOT_ID"
+            data-ad-format="auto"
+          ></ins>
+        </div>
+      </div>
+
+      <div class="bg-gray-700 p-8 rounded-md">
+        <h2 class="text-2xl font-bold mb-4 text-center text-teal-400">
+          Minified Html Output
+        </h2>
+        <div id="decodedOutput" class="text-gray-300">
+          {{ minifiedHtml }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

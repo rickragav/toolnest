@@ -1,40 +1,43 @@
 <div class="navbar bg-base-100 font-poppins">
+  <!-- Mobile Menu -->
   <div class="navbar-start">
     <div class="dropdown">
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
         </svg>
       </div>
       <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-        <li><a>Beautifiers</a></li>
-        <li><a>Minifier</a></li>
+        <li><a (click)="onPrivacyPolicyClicked()">Privacy & Policy</a></li>
       </ul>
     </div>
-    <a (click)="onLogoClicked()" class="btn btn-ghost text-xl">ToolNest</a>
+    <!-- Logo for Mobile -->
+    <div (click)="onLogoClicked()" class="hover:cursor-pointer hidden md:flex items-center">
+      <a class="text-xl text-accent mx-10">DevStack</a>
+    </div>
   </div>
-  <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1">
-      <li><a>Beautifiers</a></li>
-      <li><a>Minifier</a></li>
+
+  <!-- Center Section -->
+  <div class="navbar-center">
+    <!-- Desktop Menu -->
+    <ul class="menu menu-horizontal px-1 hidden lg:flex hover:cursor-pointer">
+      <li><a (click)="onPrivacyPolicyClicked()">Privacy & Policy</a></li>
     </ul>
+    <!-- Search Input for Mobile -->
+    <input type="text" placeholder="Search" class="input input-bordered bg-gray-700 text-white block md:hidden" />
   </div>
-  <div class="navbar-end">
+
+  <!-- Right Section -->
+  <div class="navbar-end space-x-4">
+    <!-- Search Input for Desktop -->
+    <div class="hidden md:block">
+      <input type="text" placeholder="Search" class="input input-bordered bg-gray-700 text-white" />
+    </div>
+    <!-- User Avatar -->
     <div role="button" class="btn btn-ghost btn-circle avatar">
       <div class="w-10 rounded-full">
-        <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"/>
+        <img alt="User Avatar" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
       </div>
     </div>
-    <ul class="menu menu-horizontal px-1">
-      <li class="hidden md:block">
-        <details>
-          <summary>More</summary>
-          <ul class="p-2 bg-base-100 rounded-t-none">
-            <li><a>Contact</a></li>
-            <li><a>Privacy</a></li>
-          </ul>
-        </details>
-      </li>
-    </ul>
   </div>
 </div>

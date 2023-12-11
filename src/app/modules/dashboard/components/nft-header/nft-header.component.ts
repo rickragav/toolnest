@@ -21,4 +21,12 @@ export class NftHeaderComponent implements OnInit {
   onLogoClicked(){
     this.router.navigate(['/dashboard']);
   }
+
+  onPrivacyPolicyClicked(){
+    this.router.navigate(['/dashboard/privacy-policy']);
+  }
+
+  onContactUsClicked(){
+    this.router.navigate(['/dashboard/contact-us']);
+  }
 }

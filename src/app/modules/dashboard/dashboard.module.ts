@@ -12,10 +12,13 @@ import { Base64EncoderComponent } from './pages/base64-encoder/base64-encoder.co
 import { UtilsService } from '../../utils/UtilsService';
 import { ApiService } from '../../utils/api.service';
 import { HttpClientModule } from '@angular/common/http';
+import { IntersectionObserverDirective } from './components/intersection-observer.directive';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HtmlMinifyerComponent } from './pages/html-minifyer/html-minifyer.component';
 
 @NgModule({
-  imports: [DashboardRoutingModule, FormsModule, CommonModule, ClipboardModule,HttpClientModule],
-  declarations: [HomeComponent, Base64ImageDecoderComponent, Base64ImageEncoderComponent,Base64DecoderComponent,Base64EncoderComponent],
+  imports: [DashboardRoutingModule, FormsModule, ClipboardModule,HttpClientModule, CommonModule],
+  declarations: [HomeComponent, Base64ImageDecoderComponent, Base64ImageEncoderComponent,Base64DecoderComponent,Base64EncoderComponent,IntersectionObserverDirective,HtmlMinifyerComponent],
   providers: [ApiService,UtilsService],
 })
 export class DashboardModule {}

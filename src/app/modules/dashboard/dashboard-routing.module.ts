@@ -8,6 +8,8 @@ import { Base64ImageEncoderComponent } from './pages/base64-image-encoder/base64
 import { LandingComponent } from './pages/landing/landing.component';
 import { Base64EncoderComponent } from './pages/base64-encoder/base64-encoder.component';
 import { Base64DecoderComponent } from './pages/base64-decoder/base64-decoder.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { HtmlMinifyerComponent } from './pages/html-minifyer/html-minifyer.component';
 
 // http://localhost:4200/dashboard/base64-image-encoder-decoder
 
@@ -21,6 +23,8 @@ const routes: Routes = [
       { path: 'base64-image-encoder', component: Base64ImageEncoderComponent, pathMatch: 'full' },
       { path: 'base64-encoder', component: Base64EncoderComponent, pathMatch: 'full' },
       { path: 'base64-decoder', component: Base64DecoderComponent, pathMatch: 'full' },
+      { path: 'privacy-policy', component: PrivacyPolicyComponent, pathMatch: 'full' },
+      { path: 'html-minifyer', component: HtmlMinifyerComponent, pathMatch: 'full' },
       { path: 'nfts', component: NftComponent },
     
       { path: '**', redirectTo: 'error/404' },
