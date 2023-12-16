@@ -15,10 +15,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { IntersectionObserverDirective } from './components/intersection-observer.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HtmlMinifyerComponent } from './pages/html-minifyer/html-minifyer.component';
+import { AngularFireAnalyticsModule, ScreenTrackingService } from '@angular/fire/compat/analytics';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../../../environments/environment';
+import { TrackingService } from '../../utils/TrackingService';
 
 @NgModule({
-  imports: [DashboardRoutingModule, FormsModule, ClipboardModule,HttpClientModule, CommonModule],
+  imports: [AngularFireModule.initializeApp(environment.firebaseConfig,),
+    AngularFireAnalyticsModule,DashboardRoutingModule, FormsModule, ClipboardModule,HttpClientModule, CommonModule],
   declarations: [HomeComponent, Base64ImageDecoderComponent, Base64ImageEncoderComponent,Base64DecoderComponent,Base64EncoderComponent,IntersectionObserverDirective,HtmlMinifyerComponent],
-  providers: [ApiService,UtilsService],
+  providers: [ApiService,UtilsService,ScreenTrackingService,TrackingService],
 })
 export class DashboardModule {}
